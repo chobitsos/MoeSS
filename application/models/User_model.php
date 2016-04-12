@@ -313,8 +313,8 @@ class User_model extends CI_Model
                     $query = $this->db->get('options');
                     $config['mailpath'] = $query->result()[0]->option_value;
                 }
-                elseif ($config['protocol'] == 'smtp')
-                {
+               elseif($config['protocol'] == 'smtp')
+		{
                     $this->db->where('option_name', 'mail_smtp_host');
                     $query = $this->db->get('options');
                     $config['smtp_host'] = $query->result()[0]->option_value;
@@ -378,12 +378,13 @@ class User_model extends CI_Model
                         return false;
                     }
                 }
-
                 $config['mailtype'] = 'html';
                 $config['charset'] = 'utf-8';
                 $config['wordwrap'] = TRUE;
-                $config['crlf'] = '\r\n';
-                $config['newline'] = '\r\n';
+		$config['validate'] = true;
+                $config['priority'] = 1;
+		$config['crlf'] = "\r\n";
+                $config['newline'] = "\r\n";
                 $this->load->library('email');
                 $this->email->initialize($config);
 
@@ -397,7 +398,11 @@ class User_model extends CI_Model
                 $this->email->to($user->email);
                 $this->email->subject('Please verify your account');
                 $this->email->message('<a href="'.site_url("user/activate/$code").'" target="_blank">Click Here!</a>');
-                return $this->email->send();
+               //$this->email->message('Just a test, man!');
+		return $this->email->send();
+		
+	//	var_dump($this->email);die();
+		//echo $this->email->print_debugger();die();
             }
         }
         else

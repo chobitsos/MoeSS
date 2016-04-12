@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-md-6">
                 <div class="box box-solid">
                     <div class="box-header">
-                        <i class="fa fa-code"></i>
+                        <i class="fa fa-th-list"></i>
                         <h3 class="box-title">测试节点</h3>
                     </div><!-- /.box-header -->
                     <div class="box-body">
