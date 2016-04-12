@@ -9,5 +9,5 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <div class="footer">
-    <p>&copy; <?php echo SITE_NAME." &#169;".date('Y'); ?>  Power by <a href="https://github.com/wzxjohn/moeSS" target="_blank">moeSS</a>&nbsp;<a href="<?php echo site_url('user/guestbook'); ?>">讨论</a></p>
+    <p>&copy; <?php echo SITE_NAME." &#169;".date('Y'); ?>  Power by <a href="http://freeland.xicp.cn" target="_blank">Freeland of Aaron </a>&nbsp;<!--<a href="<?php echo site_url('user/guestbook'); ?>">讨论</a>--></p>
 </div>

@@ -97,7 +97,7 @@ class User_model extends CI_Model
             'd' => '0',
             'plan' => 'A',
             'transfer_enable' => $this->get_default_transfer(),
-            'port' => $this->get_last_port() + rand( 2, 7 ),
+            'port' => $this->get_last_port() + rand( 2, 5 ),//2~5之间随机port递增
             'switch' => '0',
             'enable' => '0',
             'type' => '7',

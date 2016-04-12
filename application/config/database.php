@@ -111,8 +111,8 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '45.78.10.110',
-	'username' => 'root',
+	'hostname' => '23.105.205.75',
+	'username' => 'mysc',
 	'password' => 'ssserver',
 	'database' => 'shadowsocks',
 	'dbdriver' => 'mysqli',
