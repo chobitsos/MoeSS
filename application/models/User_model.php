@@ -102,7 +102,9 @@ class User_model extends CI_Model
             'enable' => '0',
             'type' => '7',
             'invite_num' => $this->get_default_invite_number(),
-            'money' => '0'
+            'money' => '0',
+			'history_transfer' => '0',
+			'expire_date' => time() + code_period($invitecode) //登记账户过期时间
         );
         $this->db->set('reg_date', 'NOW()', FALSE);
         return $this->db->insert('user', $data);
@@ -119,6 +121,20 @@ class User_model extends CI_Model
         else
         {
             return (bool) false;
+        }
+    }
+	
+	function code_period($invitecode)
+    {
+        $this->db->where('code', $invitecode);
+        $query = $this->db->get('invite_code');
+        if ($query->num_rows() > 0)
+        {
+            return $query->result()[0]->period;
+        }
+        else
+        {
+            return  3*24*3600; //默认三天
         }
     }
 
