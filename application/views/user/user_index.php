@@ -101,6 +101,7 @@ EOD;
                         <p> 密码: <?php echo $passwd; ?> </p>
                         <p> 套餐: <span class="label label-info"> <?php echo $plan; ?> </span> </p>
                         <p> 最后使用时间: <code><?php echo date('Y-m-d H:i:s',$unix_time); ?></code> </p>
+						<p> 套餐到期时间: <code><?php echo date('Y-m-d H:i:s',$expire_date); ?></code> </p>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
             </div><!-- /.col (right) -->

@@ -49,6 +49,8 @@ class User extends CI_Controller
             $data['unix_time'] = $user_info->t;
             $data['is_able_to_check_in'] = is_able_to_check_in( $user_info->last_check_in_time );
             $data['enable'] = $user_info->enable;
+			//用户套餐到期时间
+			$data['expire_date'] = $user_info->expire_date;
 
             $this->load->view( 'user/user_index', $data );
             $this->load->view( 'user/user_footer' );
