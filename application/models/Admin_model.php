@@ -57,7 +57,7 @@ class Admin_model extends CI_Model
         {
             $this->db->where('uid',$uid);
         }
-        $this->db->select('uid, user_name, email, pass, passwd, t, u, d, plan, transfer_enable, port, switch, enable, last_check_in_time, reg_date');
+        $this->db->select('uid, user_name, email, pass, passwd, t, u, d, plan, transfer_enable, port, switch, enable, last_check_in_time, reg_date, expire_date, history_transfer');
         return $this->db->get('user')->result();
     }
 

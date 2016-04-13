@@ -38,13 +38,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <th>端口</th>
                                         <th>上次签到</th>
                                         <th>注册时间</th>
+										<th>套餐到期时间</th>
+										<th>历史使用流量</th>
                                         <th>操作</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php if ($users) { foreach ($users as $user) : ?>
                                     <tr>
-                                        <td><span class="label label-<?php if ($user->enable) { echo 'success'; } else { echo 'danger'; } ?>">#<?php echo $user->uid; ?></span></td>
+                                        <td><span class="label label-<?php if ($user->enable && user->switch) { echo 'success'; } else { echo 'danger'; } ?>">#<?php echo $user->uid; ?></span></td>
                                         <td><?php echo $user->user_name; ?></td>
                                         <td><?php echo $user->email; ?></td>
                                         <td><?php echo $user->passwd; ?></td>
@@ -56,6 +58,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <td><?php echo $user->port; ?></td>
                                         <td><?php echo date("m-j G:i", $user->last_check_in_time); ?></td>
                                         <td><?php echo $user->reg_date; ?></td>
+										<td><?php echo $user->expire_date; ?></td>
+										<td><?php echo $user->history_transfer; ?></td>
                                         <td>
                                             <a class="btn btn-info btn-sm" href="<?php echo site_url( "admin/user_edit/$user->uid"); ?>">编辑</a>
                                             <a class="btn btn-danger btn-sm" href="<?php echo site_url( "admin/user_del/$user->uid"); ?>">删除</a>
