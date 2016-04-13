@@ -125,7 +125,7 @@ class User_model extends CI_Model
     function u_info( $username )
     {
         $this->db->where('user_name', $username);
-        $this->db->select('t, u, d, plan, transfer_enable, passwd, port, enable, last_check_in_time');
+        $this->db->select('t, u, d, plan, transfer_enable, passwd, port, enable, last_check_in_time, expire_date');
         $query = $this->db->get('user');
         if ($query->num_rows() > 0)
         {
