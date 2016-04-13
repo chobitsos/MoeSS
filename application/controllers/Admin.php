@@ -23,7 +23,7 @@ class Admin extends CI_Controller
             //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_admin_username');
-            $data['gravatar'] = get_gravatar($this->session->userdata('s_admin_email'));
+            $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
             $this->load->view( 'admin/admin_header' );
             $this->load->view( 'admin/admin_nav', $data );
 
@@ -83,7 +83,7 @@ class Admin extends CI_Controller
                     $arr = array(
                         's_admin_uid' => $user[0]->uid,
                         's_admin_username' => $user[0]->admin_name,
-                        's_admin_email' => $user[0]->email,
+                        's_email' => $user[0]->email,
                         'admin' => 'true'
                     );
                     $this->session->set_userdata($arr);
@@ -127,7 +127,7 @@ class Admin extends CI_Controller
             //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_admin_username');
-            $data['gravatar'] = get_gravatar($this->session->userdata('s_admin_email'));
+            $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
             $this->load->view( 'admin/admin_header' );
             $this->load->view( 'admin/admin_nav', $data );
 
@@ -157,7 +157,7 @@ class Admin extends CI_Controller
             //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_admin_username');
-            $data['gravatar'] = get_gravatar($this->session->userdata('s_admin_email'));
+            $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
             $this->load->view( 'admin/admin_header' );
             $this->load->view( 'admin/admin_nav', $data );
 
@@ -187,7 +187,7 @@ class Admin extends CI_Controller
             //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_admin_username');
-            $data['gravatar'] = get_gravatar($this->session->userdata('s_admin_email'));
+            $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
             $this->load->view( 'admin/admin_codes_header' );
             $this->load->view( 'admin/admin_nav', $data );
 
@@ -218,7 +218,7 @@ class Admin extends CI_Controller
             //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_admin_username');
-            $data['gravatar'] = get_gravatar($this->session->userdata('s_admin_email'));
+            $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
             $this->load->view( 'admin/admin_header' );
             $this->load->view( 'admin/admin_nav', $data );
 
@@ -256,7 +256,7 @@ class Admin extends CI_Controller
             //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_admin_username');
-            $data['gravatar'] = get_gravatar($this->session->userdata('s_admin_email'));
+            $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
             $this->load->view( 'admin/admin_header' );
             $this->load->view( 'admin/admin_nav', $data );
 
@@ -315,7 +315,7 @@ class Admin extends CI_Controller
             //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_admin_username');
-            $data['gravatar'] = get_gravatar($this->session->userdata('s_admin_email'));
+            $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
             $this->load->view( 'admin/admin_header' );
             $this->load->view( 'admin/admin_nav', $data );
 
@@ -370,7 +370,7 @@ class Admin extends CI_Controller
             //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_admin_username');
-            $data['gravatar'] = get_gravatar($this->session->userdata('s_admin_email'));
+            $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
             $this->load->view( 'admin/admin_header' );
             $this->load->view( 'admin/admin_nav', $data );
 
@@ -448,7 +448,7 @@ class Admin extends CI_Controller
             //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_admin_username');
-            $data['gravatar'] = get_gravatar($this->session->userdata('s_admin_email'));
+            $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
             $this->load->view( 'admin/admin_header' );
             $this->load->view( 'admin/admin_nav', $data );
 
@@ -503,7 +503,7 @@ class Admin extends CI_Controller
             //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_admin_username');
-            $data['gravatar'] = get_gravatar($this->session->userdata('s_admin_email'));
+            $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
             $this->load->view( 'admin/admin_header' );
             $this->load->view( 'admin/admin_nav', $data );
 
@@ -576,7 +576,7 @@ class Admin extends CI_Controller
             //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_admin_username');
-            $data['gravatar'] = get_gravatar($this->session->userdata('s_admin_email'));
+            $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
             $this->load->view( 'admin/admin_header' );
             $this->load->view( 'admin/admin_nav', $data );
 
