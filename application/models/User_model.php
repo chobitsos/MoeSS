@@ -104,7 +104,7 @@ class User_model extends CI_Model
             'invite_num' => $this->get_default_invite_number(),
             'money' => '0',
 			'history_transfer' => '0',
-			'expire_date' => time() + code_period($invitecode) //登记账户过期时间
+			'expire_date' => time() + $this->code_period($invitecode) //登记账户过期时间
         );
         $this->db->set('reg_date', 'NOW()', FALSE);
         return $this->db->insert('user', $data);
