@@ -39,7 +39,14 @@ class User extends CI_Controller
             $data['transfers'] = $user_info->u + $user_info->d;
             $data['all_transfer'] = $user_info->transfer_enable;
             $data['unused_transfer'] = human_file_size( $data['all_transfer'] - $data['transfers'] );
-            $data['used_100'] = round( ($data['transfers'] / $data['all_transfer'] * 100), 2 );
+            if(0<=$data['all_transfer'] && $data['all_transfer'] <1) 
+	    { 
+	    	$data['used_100'] = 100.00;
+	    }
+	    else
+	    {
+              $data['used_100'] = round( ($data['transfers'] / $data['all_transfer'] * 100), 2 );  
+	    }
             $data['transfers'] = human_file_size( $data['transfers'] );
             $data['all_transfer'] = human_file_size( $data['all_transfer'] );
             $data['passwd'] = $user_info->passwd;
@@ -49,8 +56,8 @@ class User extends CI_Controller
             $data['unix_time'] = $user_info->t;
             $data['is_able_to_check_in'] = is_able_to_check_in( $user_info->last_check_in_time );
             $data['enable'] = $user_info->enable;
-			//用户套餐到期时间
-			$data['expire_date'] = $user_info->expire_date;
+	    //用户套餐到期时间
+	    $data['expire_date'] = $user_info->expire_date;
 
             $this->load->view( 'user/user_index', $data );
             $this->load->view( 'user/user_footer' );
