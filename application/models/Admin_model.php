@@ -195,7 +195,7 @@ class Admin_model extends CI_Model
         }
     }
 
-    function update_user($mode = "insert", $uid = null, $user_name, $email, $pass, $passwd, $u, $d, $transfer_enable, $plan, $port, $switch, $enable )
+    function update_user($mode = "insert", $uid = null, $user_name, $email, $pass, $passwd, $u, $d, $transfer_enable, $plan, $port, $switch, $enable , $expire_date)
     {
         if ($mode == "update")
         {
@@ -213,7 +213,8 @@ class Admin_model extends CI_Model
                     'plan' => $plan,
                     'port' => $port,
                     'switch' => $switch,
-                    'enable' => $enable
+                    'enable' => $enable,
+	            'expire_date' => $expire_date
                 );
                 return $this->db->update('user', $data);
             }

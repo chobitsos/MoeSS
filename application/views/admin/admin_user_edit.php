@@ -73,7 +73,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <label for="cate_order">端口</label>
                                 <input type="text" class="form-control" name="port" <?php if ($user) {echo "value=\"$user->port\""; } ?> >
                             </div>
-
+			    <div class="form-group">
+                                <label for="cate_order">过期时间</label>
+                                <input type="text" class="form-control" name="port" <?php if ($user) {echo "value=\"$user->expire_date\""; } ?> >
+                            </div>
                             <div class="form-group">
                                 <label for="cate_order">开关</label>
                                 <input type="text" class="form-control" name="switch" <?php if ($user) {echo "value=\"$user->switch\""; } ?> >

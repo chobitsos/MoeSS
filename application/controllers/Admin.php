@@ -414,9 +414,10 @@ class Admin extends CI_Controller
             $port = $this->input->post('port');
             $switch = $this->input->post('switch');
             $enable = $this->input->post('enable');
-            if ($user_name && $email && $pass && $passwd && $u != null && $d != null && $transfer_enable != null && $plan && $port && $switch != null && $enable != null )
+	    $expire_date = $this->input->post('expire_date');
+            if ($user_name && $email && $pass && $passwd && $u != null && $d != null && $transfer_enable != null && $plan && $port && $switch != null && $enable != null && $expire_date !=null)
             {
-                if ($this->admin_model->update_user($mode, $uid, $user_name, $email, $pass, $passwd, $u, $d, $transfer_enable, $plan, $port, $switch, $enable ))
+                if ($this->admin_model->update_user($mode, $uid, $user_name, $email, $pass, $passwd, $u, $d, $transfer_enable, $plan, $port, $switch, $enable, $expire_date ))
                 {
                     //echo '{"result" : "success" }';
                     //echo '<script>alert("Success!");</script>';
