@@ -107,9 +107,29 @@ class Admin_model extends CI_Model
             $x = md5($x).md5($z);
             $x = base64_encode($x);
             $code = $sub.substr($x, rand(1, 13), 24);
+            //analyze subcode
+            $period = 2592000; // 默认一个月有效期
+            if($sub == 'MA')  //A套餐
+            {
+              $period = 2592000;  //一个月
+            }
+            elseif($sub == 'MB') //B套餐
+            {
+               $period = 2592000*3; //一季度    
+            }
+            elseif($sub == 'MC') //C套餐
+            {
+                $period = 2592000*6; //半年    
+            }
+            elseif($sub == 'MD') //B套餐
+            {
+                $period = 2592000*12; //一年
+            }
+            
             $data = array(
                 'code' => $code,
-                'user' => $type
+                'user' => $type,
+                'period' => $period
             );
             array_push($datas, $data);
         }
