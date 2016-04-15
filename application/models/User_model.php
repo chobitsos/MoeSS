@@ -47,11 +47,18 @@ class User_model extends CI_Model
         }
     }
 
-    function get_default_transfer()
+    function get_default_transfer($invitecode)
     {
-        $this->db->where('option_name', 'default_transfer');
-        $query = $this->db->get('options');
-        return $query->result()[0]->option_value;
+        $this->db->where('code', $invitecode);
+        $query = $this->db->get('invite_code');
+        if ($query->num_rows() > 0)
+        {
+            return $query->result()[0]->transfer;
+        }
+        else
+        {
+            return  0; //
+        }
     }
 
     function get_default_invite_number()
@@ -96,15 +103,15 @@ class User_model extends CI_Model
             'u' => '0',
             'd' => '0',
             'plan' => 'A',
-            'transfer_enable' => $this->get_default_transfer(),
+            'transfer_enable' => $this->get_default_transfer($invitecode),
             'port' => $this->get_last_port() + rand( 2, 5 ),//2~5之间随机port递增
             'switch' => '0',
             'enable' => '0',
             'type' => '7',
             'invite_num' => $this->get_default_invite_number(),
             'money' => '0',
-			'history_transfer' => '0',
-			'expire_date' => time() + $this->code_period($invitecode) //登记账户过期时间
+	    'history_transfer' => '0',
+	    'expire_date' => time() + $this->code_period($invitecode) //登记账户过期时间
         );
         $this->db->set('reg_date', 'NOW()', FALSE);
         return $this->db->insert('user', $data);
