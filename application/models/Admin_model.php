@@ -108,28 +108,48 @@ class Admin_model extends CI_Model
             $x = base64_encode($x);
             $code = $sub.substr($x, rand(1, 13), 24);
             //analyze subcode
-            $period = 2592000; // 默认一个月有效期
+            // 默认一个月有效期
+            $default_period = 2592000; 
+            $period = $default_period;
+            // 默认流量,从配置里读取
+            $this->db->where('option_name', 'default_transfer');
+            $query = $this->db->get('options');
+            if ($query->num_rows() > 0)
+            {
+                $default_transfer = $query->result()[0]->option_value;
+            }
+            else  //500M
+            {
+                $default_transfer = 500*1024*1024;
+            }
+            $transfer = $default_transfer;
+            
             if($sub == 'MA')  //A套餐
             {
-              $period = 2592000;  //一个月
+              $period = $default_period;  //一个月
+              $transfer =  $default_transfer;
             }
             elseif($sub == 'MB') //B套餐
             {
-               $period = 2592000*3; //一季度    
+               $period = $default_period * 3; //一季度    
+               $transfer =  $default_transfer * 3;
             }
             elseif($sub == 'MC') //C套餐
             {
-                $period = 2592000*6; //半年    
+                $period = $default_period * 6; //半年   
+                $transfer =  $default_transfer * 6;
             }
             elseif($sub == 'MD') //B套餐
             {
-                $period = 2592000*12; //一年
+                $period = $default_period * 12; //一年
+                $transfer =  $default_transfer * 12;
             }
             
             $data = array(
                 'code' => $code,
                 'user' => $type,
-                'period' => $period
+                'period' => $period,
+                'transfer' => $transfer
             );
             array_push($datas, $data);
         }
