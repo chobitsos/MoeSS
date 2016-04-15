@@ -39,7 +39,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <div class="jumbotron">
         <h2><?php echo SITE_NAME; ?></h2>
-        <p class="lead"> 每个月3G流量，美国高速节点。每日签到送流量!</p>
+        <p class="lead"> 每个月3G流量，海外高速节点，每日签到送流量!</p>
+        <p class="lead"> 秒开网页，支持设备同时接入</p>
         <p><a class="btn btn-lg btn-success" href="<?php echo site_url('user/register'); ?>" role="button">立即注册</a></p>
     </div>
 
