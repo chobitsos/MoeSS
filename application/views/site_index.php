@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <div class="jumbotron">
         <h2><?php echo SITE_NAME; ?></h2>
-        <p class="lead"> 每个月5G流量，美国高速节点。</p>
+        <p class="lead"> 每个月3G流量，美国高速节点。每日签到送流量!</p>
         <p><a class="btn btn-lg btn-success" href="<?php echo site_url('user/register'); ?>" role="button">立即注册</a></p>
     </div>
 
@@ -48,8 +48,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/shadowsocks-nightly-2.9.5.apk" target="_blank"><h4>Android</h4></a>
             <p>Android客户端</p>
 
-            <h4><a href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/Shadowsocks-2.5.8.zip" target="_blank">Shadowsocks C#</a></h4>
-            <p> Windows用户推荐此客户端.</p>
+            <h4><a href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/Shadowsocks-2.5.8.zip" target="_blank">Windows</a></h4>
+            <p> Windows用户推荐此客户端</p>
 
 
         </div>
