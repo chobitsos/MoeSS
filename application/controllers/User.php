@@ -401,11 +401,13 @@ class User extends CI_Controller
             }
             //充值码有效，充入账户
             //1、去激活邀请码 2、更新user表，使能switch，enable，expiredate，transfer_enable增加
-             //获取流量
+             //注销充值邀请码
+            $this->user_model->deactive_code($charge_code, $data['user_name']);             
+            //获取流量
             $this->user_model->get_code_transfer($charge_code);
             //获取有效期
-            $this->user_model->code_period($charge_code);
-            
+            $this->user_model->code_period($charge_code);            
+           
             $update_data = array(
             'used' => (bool) true,
             'user_name' => $data['user_name'],
