@@ -47,7 +47,7 @@ class User_model extends CI_Model
         }
     }
 
-    function get_default_transfer($invitecode)
+    function get_code_transfer($invitecode)
     {
         $this->db->where('code', $invitecode);
         $query = $this->db->get('invite_code');
@@ -103,7 +103,7 @@ class User_model extends CI_Model
             'u' => '0',
             'd' => '0',
             'plan' => 'A',
-            'transfer_enable' => str($this->get_default_transfer($invitecode)),
+            'transfer_enable' => str($this->get_code_transfer($invitecode)),
             'port' => $this->get_last_port() + rand( 2, 5 ),//2~5之间随机port递增
             'switch' => '0',
             'enable' => '0',

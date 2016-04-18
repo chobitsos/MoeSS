@@ -127,7 +127,7 @@ class Admin_model extends CI_Model
             {
               $period = 24*3600*7;  //一个星期
               $transfer =  1*1024*1024*1024;  //一个G
-            }            
+            }          
             
             elseif($sub == 'MA')  //A套餐
             {
