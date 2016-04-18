@@ -418,7 +418,7 @@ class User extends CI_Controller
             );
             
             $this->db->where('code', $charge_code);
-            $this->db->update('invite_code', $update_data );
+            $this->db->update('user', $update_data );
             echo '{"result" : "充值成功!" }';
             return;
         }
