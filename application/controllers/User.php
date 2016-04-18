@@ -415,7 +415,7 @@ class User extends CI_Controller
             'expire_date' => (int)($this->user_model->code_period($charge_code)) +  (int)($data['expire_date']) //刷新增加expire_date              
             );
             
-            $this->db->where('user_name', $data['expire_date']);
+            $this->db->where('user_name', $data['user_name']);
             $this->db->update('user', $update_data );
             echo '{"result" : "充值成功!" }';
             return;
