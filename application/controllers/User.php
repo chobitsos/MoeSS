@@ -418,7 +418,8 @@ class User extends CI_Controller
             $this->db->update('user', $update_data );
            // echo '{"result":"success" }';
             echo json_encode(array('result' => 'success'));
-            return;
+            redirect(site_url('user'));
+            //return;
         }
         else
         {
