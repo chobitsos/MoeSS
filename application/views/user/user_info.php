@@ -38,7 +38,7 @@ $this->load->helper('form');
                     }
                 }
             )
-        })
+        });
         
          // post-submit callback
         function showResponse(data) {
