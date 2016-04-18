@@ -380,6 +380,7 @@ class User extends CI_Controller
     {
         if ($this->is_login())
         {
+            $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_username');
             $user_info = $this->user_model->u_info($data['user_name']);
             $data['transfers'] = $user_info->u + $user_info->d;
