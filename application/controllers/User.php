@@ -403,7 +403,7 @@ class User extends CI_Controller
             //1、去激活邀请码 2、更新user表，使能switch，enable，expiredate，transfer_enable增加
              //注销充值邀请码
             $this->user_model->deactive_code($charge_code, $data['user_name']);             
-            //获取流量
+            //获取充值码对应的流量
             $this->user_model->get_code_transfer($charge_code);
             //获取有效期
             $this->user_model->code_period($charge_code);            
@@ -411,8 +411,8 @@ class User extends CI_Controller
             $update_data = array(
             'switch' => '1',
             'enable' => '1',                
-            'transfer_enable' => $this->user_model->get_code_transfer($charge_code),
-            'expire_date' => (int)($this->user_model->code_period($charge_code)) +  (int)($data['expire_date']) //刷新expire_date              
+            'transfer_enable' => (int)$this->user_model->get_code_transfer($charge_code) + (int)$data['transfers'], //刷新增加流量
+            'expire_date' => (int)($this->user_model->code_period($charge_code)) +  (int)($data['expire_date']) //刷新增加expire_date              
             );
             
             $this->db->where('user_name', $data['expire_date']);
