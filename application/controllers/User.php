@@ -109,14 +109,14 @@ class User extends CI_Controller
         $username = $this->input->post('username');
         if ( strlen($username)<7||strlen($username)>32 )
         {
-            echo '{"result" : "Username not valid!" }';
+            echo '{"result":"Username not valid!" }';
             return;
         }
         $password = $this->input->post('password');
         $email = $this->input->post('email');
         if ( !filter_var($email, FILTER_VALIDATE_EMAIL) )
         {
-            echo '{"result" : "E-mail not valid!" }';
+            echo '{"result":"E-mail not valid!" }';
             return;
         }
         $invitecode = $this->input->post('code');
@@ -126,7 +126,7 @@ class User extends CI_Controller
             $user = $this->user_model->u_select($username);
             if ($user)
             {
-                echo '{"result" : "Username already exist!" }';
+                echo '{"result":"Username already exist!" }';
                 return;
             }
             else
@@ -137,13 +137,13 @@ class User extends CI_Controller
                     {
                         if ( !$this->user_model->valid_code($invitecode) )
                         {
-                            echo '{"result" : "Invite Code Invalid!" }';
+                            echo '{"result":"Invite Code Invalid!" }';
                             return;
                         }
                     }
                     else
                     {
-                        echo '{"result" : "Please input Invite Code!" }';
+                        echo '{"result":"Please input Invite Code!" }';
                         return;
                     }
                 }
@@ -155,25 +155,25 @@ class User extends CI_Controller
                 {
                     if ( $this->user_model->send_active_email($username) )
                     {
-                        echo '{"result" : "success" }';
+                        echo '{"result":"success" }';
                         return;
                     }
                     else
                     {
-                        echo '{"result" : "E-mail send failed!" }';
+                        echo '{"result":"E-mail send failed!" }';
                         return;
                     }
                 }
                 else
                 {
-                    echo '{"result" : "DB Failed!" }';
+                    echo '{"result":"DB Failed!" }';
                     return;
                 }
             }
         }
         else
         {
-            echo '{"result" : "Something Missing!" }';
+            echo '{"result":"Something Missing!" }';
             return;
         }
         return;
@@ -207,19 +207,19 @@ class User extends CI_Controller
                 }
                 else
                 {
-                    echo '{"result" : "Wrong Username or Password!" }';
+                    echo '{"result":"Wrong Username or Password!" }';
                     //redirect(site_url('admin/login/'));
                 }
             }
             else
             {
-                echo '{"result" : "Wrong Username or Password!" }';
+                echo '{"result":"Wrong Username or Password!" }';
                 //redirect(site_url('admin/login/'));
             }
         }
         else
         {
-            echo '{"result" : "Wrong Username or Password!" }';
+            echo '{"result":"Wrong Username or Password!" }';
         }
         return;
     }
@@ -348,7 +348,6 @@ class User extends CI_Controller
     {
         if ($this->is_login())
         {
-            //$this->load->view('welcome_message');
             $this->load->helper('comm');
             $data['user_name'] = $this->session->userdata('s_username');
             $data['gravatar'] = get_gravatar($this->session->userdata('s_email'));
@@ -417,13 +416,14 @@ class User extends CI_Controller
             
             $this->db->where('user_name', $data['user_name']);
             $this->db->update('user', $update_data );
-            echo '{"result":"success" }';
+           // echo '{"result":"success" }';
+            echo json_encode(array('result' => 'success'));
             return;
         }
         else
         {
             redirect(site_url('user/login'));
-        }      
+        }
     }
 
     function do_profile_update()
