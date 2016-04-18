@@ -38,14 +38,15 @@ $this->load->helper('form');
                     dataType:"json", //数据类型   
                     async: false,
                     success:function(data){ //提交成功的回调函数  
+                    alert('1111111');
                     if (data.result == "success") {
                         alert('222222');
                         window.location.href = "<?php echo site_url('user'); ?>";
                         } 
                     else {
                         alert(data.result);
-                        }  
-                    }  
+                        }
+                    }
                }); 
                 return false;
             });
