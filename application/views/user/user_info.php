@@ -33,7 +33,7 @@ $this->load->helper('form');
 //            };
         $(function() {  
             $('#rechargeForm').submit(function() {
-                $(this).ajaxSubmit({  
+                $.ajax({  
                     type:"post",  //提交方式  
                     dataType:"json", //数据类型  
                     success:function(data){ //提交成功的回调函数  
