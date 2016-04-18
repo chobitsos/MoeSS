@@ -411,7 +411,7 @@ class User extends CI_Controller
             $update_data = array(
             'switch' => '1',
             'enable' => '1',                
-            'transfer_enable' => (int)$this->user_model->get_code_transfer($charge_code) + (int)$data['transfers'], //刷新增加流量
+            'transfer_enable' => (int)$this->user_model->get_code_transfer($charge_code) + (int)$data['all_transfer'], //刷新增加流量
             'expire_date' => (int)($this->user_model->code_period($charge_code)) +  (int)($data['expire_date']) //刷新增加expire_date              
             );
             
