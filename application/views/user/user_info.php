@@ -10,8 +10,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->helper('form');
 ?><!-- Right side column. Contains the navbar and content of the page -->
-
-<script language="javascript">
+    <!-- bootstrap 3.0.2 -->
+    <link href="<?php echo base_url("static/css/bootstrap.min.css"); ?>" rel="stylesheet" type="text/css" />
+    <!-- font Awesome -->
+    <link href="<?php echo base_url("static/css/font-awesome.min.css"); ?>" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="<?php echo base_url("static/css/AdminLTE.css"); ?>" rel="stylesheet" type="text/css" />
+    <!-- jQuery 2.0.2 -->
+    <script src="<?php echo base_url("static/js/jquery-2.0.3.min.js"); ?>"></script>
+    <script src="<?php echo base_url("static/js/jquery.validate.min.js"); ?>"></script>
+    <script src="<?php echo base_url("static/js/jquery.form.min.js"); ?>"></script>
+    <!-- Bootstrap -->
+    <script src="<?php echo base_url("static/js/bootstrap.min.js"); ?>" type="text/javascript"></script>
+  
+   <head> 
+   <script language="javascript">
           $(document).ready(function() {
             var options = {
                 target:        '#rechargeResult',   // target element(s) to be updated with server response
@@ -49,7 +62,9 @@ $this->load->helper('form');
             }
         }
 </script>
+</head>
 
+<body class="bg-black">
 <aside class="right-side">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -89,3 +104,4 @@ $this->load->helper('form');
     </section><!-- /.content -->
      <?php echo form_close(); ?>
 </aside><!-- /.right-side -->
+</body>
