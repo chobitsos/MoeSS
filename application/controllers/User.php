@@ -412,19 +412,18 @@ class User extends CI_Controller
             'switch' => '1',
             'enable' => '1',                
             'transfer_enable' => $this->user_model->get_code_transfer($charge_code),
-            'expire_date' => (int)($this->user_model->code_period($charge_code)) +  int($data['expire_date']) //刷新expire_date              
+            'expire_date' => (int)($this->user_model->code_period($charge_code)) +  (int)($data['expire_date']) //刷新expire_date              
             );
             
             $this->db->where('code', $charge_code);
             $this->db->update('invite_code', $update_data );
+            echo '{"result" : "充值成功!" }';
+            return;
         }
         else
         {
             redirect(site_url('user/login'));
-        }
-        
-         echo '{"result" : "充值成功!" }';
-        return;
+        }      
     }
 
     function do_profile_update()
