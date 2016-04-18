@@ -25,32 +25,31 @@ $this->load->helper('form');
   
    <head> 
    <script language="javascript">
-          $(document).ready(function() {
-            var options = {
-                target:        '#rechargeResult',   // target element(s) to be updated with server response
-                success:       showResponse,  // post-submit callback
-                dataType:  'json'        // 'xml', 'script', or 'json' (expected server response type)
-            };
-
+//          $(document).ready(function() {
+//            var options = {
+//                target:        '#rechargeResult',   // target element(s) to be updated with server response
+//                success:       showResponse,  // post-submit callback
+//                dataType:  'json'        // 'xml', 'script', or 'json' (expected server response type)
+//            };
+        $(function() {  
             $('#rechargeForm').submit(function() {
-                if ($(this).valid()) {
-                     alert('11111');
-                    $(this).ajaxSubmit(options);
-                    return false;
-                }
+                $(this).ajaxSubmit({  
+                    type:"post",  //提交方式  
+                    dataType:"json", //数据类型  
+                    success:function(data){ //提交成功的回调函数  
+                    if (data.result == "充值成功") {
+                        alert('222222');
+                        window.location.href = "<?php echo site_url('user'); ?>";
+                        } 
+                    else {
+                        alert(data.result);
+                        }  
+                    }  
+               }); 
+                return false;
             });
-        });
-        
-         // post-submit callback
-        function showResponse(data) {
-             alert('11111');
-            if (data.result == "充值成功") {
-               alert('222222');
-                window.location.href = "<?php echo site_url('user'); ?>";
-            } else {
-                alert(data.result);
-            }
-        }
+        });       
+      
 </script>
 </head>
 
