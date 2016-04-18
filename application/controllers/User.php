@@ -409,8 +409,6 @@ class User extends CI_Controller
             $this->user_model->code_period($charge_code);            
            
             $update_data = array(
-            'used' => (bool) true,
-            'user_name' => $data['user_name'],
             'switch' => '1',
             'enable' => '1',                
             'transfer_enable' => $this->user_model->get_code_transfer($charge_code),
