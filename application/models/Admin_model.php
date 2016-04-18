@@ -122,9 +122,14 @@ class Admin_model extends CI_Model
             {
                 $default_transfer = 500*1024*1024;
             }
-            $transfer = $default_transfer;
             
-            if($sub == 'MA')  //A套餐
+            if($sub == 'TST')  //试用套餐邀请码
+            {
+              $period = 24*3600*7;  //一个星期
+              $transfer =  1*1024*1024*1024;  //一个G
+            }            
+            
+            elseif($sub == 'MA')  //A套餐
             {
               $period = $default_period;  //一个月
               $transfer =  $default_transfer;
@@ -143,6 +148,11 @@ class Admin_model extends CI_Model
             {
                 $period = $default_period * 12; //一年
                 $transfer =  $default_transfer * 12;
+            }
+            
+            else{  //非套餐，非试用账号
+                $transfer = $default_transfer;
+                $period = $default_period;
             }
             
             $data = array(
