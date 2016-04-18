@@ -25,11 +25,7 @@ $this->load->helper('form');
                     return false;
                 }
             });
-
-            jQuery.validator.addMethod("onlyAlphaNumber", function(value, element) {
-                return /^[a-zA-Z0-9]+$/.test(value);
-            }, "Alpha and Number Only!");
-            
+         
            jQuery.validator.addMethod("NotNull", function(value, element) {
                 return value.length > 10;
             }, "请输入正确的充值邀请码!");
@@ -86,7 +82,7 @@ $this->load->helper('form');
                         <p>邮箱: <?php echo $user_email;  ?></p>
                         <p>套餐: <span class="label label-info"> <?php echo $plan; ?> </span> </p>
                         <p>剩余套餐流量: <?php echo $money; ?>元  </p>
-                        <p>充值邀请码：<input type="text" maxlength="30" name="charge_code"> <button type="submit"class="btn btn-info btn-sm">充值</button></p>
+                        <p>充值邀请码：<input type="text" maxlength="30" class="form-control" id="charge_code" name="charge_code" required > <button type="submit"class="btn btn-info btn-sm">充值</button></p>
                     </div><!-- /.box -->
                 </div>
             </div>
