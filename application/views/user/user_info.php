@@ -51,7 +51,9 @@ $this->load->helper('form');
         
          // post-submit callback
         function showResponse(data) {
+             alert('11111');
             if (data.result == "充值成功") {
+               alert('222222');
                 window.location.href = "<?php echo site_url('user'); ?>";
             } else {
                 alert(data.result);
