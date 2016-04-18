@@ -39,11 +39,7 @@ $this->load->helper('form');
                 }
             });
          
-           jQuery.validator.addMethod("NotNull", function(value, element) {
-                return value.length > 10;
-            }, "请输入正确的充值邀请码!");
-
-            $('#rechargeForm').validate( {
+           $('#rechargeForm').validate( {
                     rules:{
                         charge_code: {
                             required: true
@@ -55,7 +51,7 @@ $this->load->helper('form');
         
          // post-submit callback
         function showResponse(data) {
-            if (data.result == "success") {
+            if (data.result == "充值成功") {
                 window.location.href = "<?php echo site_url('user'); ?>";
             } else {
                 alert(data.result);
