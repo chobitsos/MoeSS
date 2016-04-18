@@ -38,15 +38,6 @@ $this->load->helper('form');
                     return false;
                 }
             });
-         
-           $('#rechargeForm').validate( {
-                    rules:{
-                        charge_code: {
-                            required: true
-                        }
-                    }
-                }
-            )
         });
         
          // post-submit callback
