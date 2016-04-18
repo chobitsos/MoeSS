@@ -389,7 +389,7 @@ class User extends CI_Controller
             $data['expire_date'] = $user_info->expire_date;
             //分析充值邀请码
             $charge_code = $this->input->post('charge_code');            
-            if(empty($charge_code) ||isset($charge_code) )
+            if( strlen($charge_code) < 1 )
             {
                 echo '{"result" : "充值邀请码未填写!" }';
                 return;
