@@ -375,9 +375,54 @@ class User extends CI_Controller
         return;
     }
 
-    function pay()
+    /* 这里是充值逻辑 */
+    function do_recharge()
     {
-        redirect(site_url('user'));
+        if ($this->is_login())
+        {
+            $data['user_name'] = $this->session->userdata('s_username');
+            $user_info = $this->user_model->u_info($data['user_name']);
+            $data['transfers'] = $user_info->u + $user_info->d;
+            $data['all_transfer'] = $user_info->transfer_enable;
+            $data['unused_transfer'] = human_file_size( $data['all_transfer'] - $data['transfers'] );
+            $data['expire_date'] = $user_info->expire_date;
+            //分析充值邀请码
+            $recharge_code = $this->input->post('recharge_code');            
+            if(empty($recharge_code) ||isset($recharge_code) )
+            {
+                echo '{"result" : "充值邀请码未填写!" }';
+                return;
+            }
+            else if( !$this->user_model->valid_code($recharge_code) )
+            {
+                echo '{"result" : "无效的充值邀请码!" }';
+                return;
+            }
+            //充值码有效，充入账户
+            //1、去激活邀请码 2、更新user表，使能switch，enable，expiredate，transfer_enable增加
+             //获取流量
+            $this->user_model->get_code_transfer($recharge_code);
+            //获取有效期
+            $this->user_model->code_period($recharge_code);
+            
+            $update_data = array(
+            'used' => (bool) true,
+            'user_name' => $data['user_name'],
+            'switch' => '1',
+            'enable' => '1',                
+            'transfer_enable' => $this->user_model->get_code_transfer($recharge_code),
+            'expire_date' => (int)($this->user_model->code_period($recharge_code)) +  int($data['expire_date']) //刷新expire_date              
+            );
+            
+            $this->db->where('code', $invitecode);
+            $this->db->update('invite_code', $update_data );
+        }
+        else
+        {
+            redirect(site_url('user/login'));
+        }
+        
+         echo '{"result" : "充值成功!" }';
         return;
     }
 
