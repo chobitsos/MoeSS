@@ -391,12 +391,12 @@ class User extends CI_Controller
             $charge_code = $this->input->post('charge_code');            
             if( strlen($charge_code) < 1 )
             {
-                echo '{"result" : "充值邀请码未填写!" }';
+                echo '{"result":"充值邀请码未填写!" }';
                 return;
             }
             else if( !$this->user_model->valid_code($charge_code) )
             {
-                echo '{"result" : "无效的充值邀请码!" }';
+                echo '{"result":"无效的充值邀请码!" }';
                 return;
             }
             //充值码有效，充入账户
@@ -417,7 +417,7 @@ class User extends CI_Controller
             
             $this->db->where('user_name', $data['user_name']);
             $this->db->update('user', $update_data );
-            echo '{"result" : "充值成功" }';
+            echo '{"result":"充值成功" }';
             return;
         }
         else

@@ -34,6 +34,7 @@ $this->load->helper('form');
 
             $('#rechargeForm').submit(function() {
                 if ($(this).valid()) {
+                     alert('11111');
                     $(this).ajaxSubmit(options);
                     return false;
                 }
