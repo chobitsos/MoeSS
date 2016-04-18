@@ -7,6 +7,8 @@
  * Time: 21:28
  */
 
+defined('BASEPATH') OR exit('No direct script access allowed');
+$this->load->helper('form');
 ?><!-- Right side column. Contains the navbar and content of the page -->
 
 <script language="javascript">
