@@ -417,7 +417,7 @@ class User extends CI_Controller
             
             $this->db->where('user_name', $data['user_name']);
             $this->db->update('user', $update_data );
-            echo '{"result":"充值成功" }';
+            echo '{"result":"success" }';
             return;
         }
         else

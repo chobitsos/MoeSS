@@ -37,7 +37,7 @@ $this->load->helper('form');
                     type:"post",  //提交方式  
                     dataType:"json", //数据类型  
                     success:function(data){ //提交成功的回调函数  
-                    if (data.result == "充值成功") {
+                    if (data.result == "success") {
                         alert('222222');
                         window.location.href = "<?php echo site_url('user'); ?>";
                         } 
