@@ -84,8 +84,8 @@ EOD;
                         <?php  }else{ ?>
                             <p><a class="btn btn-success disabled" id="check_in_button" href="#">不能签到</a> </p>
                         <?php  } ?>
-                        <p>上次签到时间<code><?php echo date('Y-m-d H:i:s', $last_check_in_time );?></code></p>
-                         <p><a class="btn btn-success" id="check_in_button" href="#" onclick="<?php echo site_url('user/my_info'); ?>">充值</a> </p>
+                        <p>上次签到时间<code><?php echo date('Y-m-d H:i:s', $last_check_in_time );?></code></p>  
+                         <p><a class="btn btn-success" id="check_in_button" href="#" href="<?php echo site_url('user/my_info'); ?>">充值</a> </p>
                         <p id="check_in_result"></p>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
