@@ -78,13 +78,14 @@ EOD;
                         <h3 class="box-title">签到获取流量</h3>
                     </div><!-- /.box-header -->
                     <div class="box-body">
-                        <p> 24小时内可以签到一次，签到流量每月清零。 </p>
+                        <p> 注意：24小时内可以签到一次，签到流量随套餐到期清零。 </p>
                         <?php  if( $is_able_to_check_in ) { ?>
                             <p><a class="btn btn-success" id="check_in_button" href="#" onclick="do_check_in()">签到</a> </p>
                         <?php  }else{ ?>
                             <p><a class="btn btn-success disabled" id="check_in_button" href="#">不能签到</a> </p>
                         <?php  } ?>
                         <p>上次签到时间<code><?php echo date('Y-m-d H:i:s', $last_check_in_time );?></code></p>
+                         <p><a class="btn btn-success" id="check_in_button" href="#" onclick="<?php echo site_url('user/my_info'); ?>">充值</a> </p>
                         <p id="check_in_result"></p>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
