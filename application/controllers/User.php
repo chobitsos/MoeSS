@@ -398,6 +398,15 @@ class User extends CI_Controller
                 echo '{"result":"无效的充值邀请码!" }';
                 return;
             }
+            
+            //不允许试用码充值
+            else if( strpos($charge_code, "TEST") === 0 
+                    || strpos($charge_code, "TST") === 0 )
+            {
+                echo '{"result":"试用邀请码不支持充值!" }';
+                return;
+            }
+            
             //充值码有效，充入账户
             //1、去激活邀请码 2、更新user表，使能switch，enable，expiredate，transfer_enable增加
              //注销充值邀请码
