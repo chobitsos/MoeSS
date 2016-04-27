@@ -123,11 +123,11 @@ class Admin_model extends CI_Model
                 $default_transfer = 500*1024*1024;
             }
             
-            if($sub == 'TST')  //试用套餐邀请码
+            if($sub == 'TST' || $sub == 'TEST')  //试用套餐邀请码
             {
-              $period = 24*3600*7;  //一个星期
-              $transfer =  1*1024*1024*1024;  //一个G
-            }          
+              $period = 24 * 3600 * 14;  //2个星期
+              $transfer = 1024 * 1024 * 1024 * 2;  //2个G
+            }
             
             elseif($sub == 'MA')  //A套餐
             {
