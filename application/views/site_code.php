@@ -10,12 +10,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="<?php echo site_url('favicon.ico'); ?>">
+	<link type="text/css" href="<?php echo base_url("static/css/index.css"); ?>" rel="stylesheet" />
+	
 
     <title><?php echo SITE_NAME; ?> - 邀请码</title>
 
@@ -33,10 +35,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body>
-
-<div class="container">
-    <?php $this->load->view('index_nav');?>
-
+ <?php $this->load->view('index_nav');?>
+<div class="bannerWrap clear">
+	<div class="banner clear"></div>
+</div>
+<div class="container">   
     <div class="jumbotron">
         <p class="lead"> 邀请码实时刷新</p>
     </div>
@@ -65,9 +68,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </tbody>
             </table>
         </div>
-    </div><?php
+    </div>
+</div> <!-- /container -->
+<?php
     $this->load->view('index_footer');
     $this->load->view('ana') ;?>
-</div> <!-- /container -->
 </body>
 </html>
