@@ -103,7 +103,7 @@ class User_model extends CI_Model
             'u' => '0',
             'd' => '0',
             'plan' => 'A',
-            'transfer_enable' => str($this->get_code_transfer($invitecode)),
+            'transfer_enable' => strval($this->get_code_transfer($invitecode)),
             'port' => $this->get_last_port() + rand( 2, 5 ),//2~5之间随机port递增
             'switch' => '0',
             'enable' => '0',
@@ -113,6 +113,7 @@ class User_model extends CI_Model
 	    'history_transfer' => '0',
 	    'expire_date' => time() + $this->code_period($invitecode) //登记账户过期时间
         );
+        var_dump($data);die();
         $this->db->set('reg_date', 'NOW()', FALSE);
         return $this->db->insert('user', $data);
     }
