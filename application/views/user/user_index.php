@@ -28,8 +28,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div><!-- /.box-header -->
                     <div class="box-body">
                         <div class="callout callout-warning">
+                            <h4>公告</h4>
+                            <p>服务器新鲜到位，不定期福利提供！</p><br>
                             <h4>Shadowsocks配置指导手册</h4>
-                            <a class="btn btn-success" id="check_in_button" href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/Shadowsocks配置上网.docx">立即下载</a>
+                            <p><a class="btn btn-success" id="check_in_button" href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/Shadowsocks配置上网.docx">立即下载</a></p><br>
+                            <h4>FAQ</h4>
+                            <p><img src="<?php echo base_url('images/chatgrp.png'); ?>" border="0"/></p>
                         </div>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
