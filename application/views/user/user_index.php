@@ -28,8 +28,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div><!-- /.box-header -->
                     <div class="box-body">
                         <div class="callout callout-warning">
-                            <h4>注意!</h4>
-                            <p>服务器新鲜到位<br />不定期福利提供！</p>
+                            <h4>Shadowsocks配置指导手册</h4>
+                            <a class="btn btn-success" id="check_in_button" href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/Shadowsocks配置上网.docx">立即下载</a>
                         </div>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
