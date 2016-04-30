@@ -91,7 +91,7 @@ class User_model extends CI_Model
     {
         if ($invitecode)
         {
-            $this->deactive_code($invitecode, $username);
+           // $this->deactive_code($invitecode, $username);
         }
         $this->load->helper('comm');
         $data = array(
@@ -112,8 +112,7 @@ class User_model extends CI_Model
             'money' => '0',
 	    'history_transfer' => '0',
 	    'expire_date' => time() + $this->code_period($invitecode) //登记账户过期时间
-        );
-        var_dump($data);die();
+        ); 
         $this->db->set('reg_date', 'NOW()', FALSE);
         return $this->db->insert('user', $data);
     }
