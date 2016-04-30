@@ -91,7 +91,7 @@ class User_model extends CI_Model
     {
         if ($invitecode)
         {
-           // $this->deactive_code($invitecode, $username);
+            $this->deactive_code($invitecode, $username);
         }
         $this->load->helper('comm');
         $data = array(
