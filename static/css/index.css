@@ -22,8 +22,8 @@ ul, li, h1, h2, h3, h4, h5, p, a, img { margin:0; padding:0;}
 .menu li.reg a:hover { background:#d44c32;}
 
 /*-----Banner-----*/
-.bannerWrap { width:100%; background:#1c2125;}
-.banner { width:100%; height:600px; margin:0 auto; background:url(../../images/pic1.jpg) no-repeat center 0;}
+.bannerWrap { width:100%; width:auto\9; background:#1c2125;}
+.banner { width:100%; width:auto\9; height:600px; margin:0 auto; background:url(../../images/pic1.jpg) no-repeat center 0;}
 
 /*-----Content-----*/
 .con { width:1140px; margin:50px auto;}
