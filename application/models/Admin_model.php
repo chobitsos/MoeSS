@@ -129,6 +129,30 @@ class Admin_model extends CI_Model
               $transfer = 1024 * 1024 * 1024 * 2;  //2个G
             }
             
+            elseif($sub == 'T1G')  //1G流量
+            {
+              $period = 0;  //不延长有效期
+              $transfer =   1024 * 1024 * 1024 * 1;  //1个G
+            }
+            
+             elseif($sub == 'T2G')  //2G流量
+            {
+              $period = 0;  //不延长有效期
+              $transfer =   1024 * 1024 * 1024 * 2;  //2个G
+            }
+
+            elseif($sub == 'T5G')  //5G流量
+            {
+              $period = 0;  //不延长有效期
+              $transfer =   1024 * 1024 * 1024 * 5;  //5个G
+            }
+            
+            elseif($sub == 'T10G')  //10G流量
+            {
+              $period = 0;  //不延长有效期
+              $transfer =   1024 * 1024 * 1024 * 10;  //10个G
+            }
+            
             elseif($sub == 'MA')  //A套餐
             {
               $period = $default_period;  //一个月

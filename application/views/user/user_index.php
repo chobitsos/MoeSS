@@ -29,11 +29,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="box-body">
                         <div class="callout callout-warning">
                             <h4>公告</h4>
-                            <p>服务器新鲜到位，不定期福利提供！<br>加Q群送流量！如需充值或延期请联系管理员！</p><br>
+                            <p>服务器新鲜到位，不定期福利提供！<br>加Q群送流量！如需充值或延期及其他诉求请联系QQ群主, 见FAQ！</p><br>
                             <h4>Shadowsocks配置指导手册</h4>
                             <p><a class="btn btn-success" id="check_in_button" href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/Shadowsocks配置上网.docx">立即下载</a></p><br>
+                            <h4>活动热推</h4>
+                            <p><img src="<?php echo base_url('images/hot.png'); ?>" width="50" height="50" border="0"/>
+                             5月底前充值一个月，送一个月(共20G流量)，充两个月以上，送两个月（共40G流量）
+                            <font color="#FF0000">支付宝转账：d5aaron@gmail.com, 注明账号 </font></p><br>
+                            <p><img src="<?php echo base_url('images/prize.png'); ?>" width="50" height="50" border="0"/>
+                             KDS TF专供：射分送流量，10分送1G，以此类推</p>
+                            <p><img src="<?php echo base_url('images/notice.png'); ?>" width="50" height="50" border="0"/>流量一次性到账，流量随账号过期后清零！</p>                            
                             <h4>FAQ</h4>
-                            <p><img src="<?php echo base_url('images/chatgrp.png'); ?>" border="0"/></p>
+                            <p><img src="<?php echo base_url('images/chatgrp.png'); ?>" border="0"/></p>                            
                         </div>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->

@@ -289,8 +289,11 @@ class User extends CI_Controller
 
             $user_info = $this->user_model->u_basic_info($data['user_name']);
             $data['user_email'] = $user_info->email;
-            $data['plan'] = $user_info->plan;
+            $data['plan'] = $user_info->plan;            
             $data['money'] = $user_info->money;
+            $data['transfers'] = $user_info->u + $user_info->d;
+            $data['all_transfer'] = $user_info->transfer_enable;
+            $data['unused_transfer'] = human_file_size( $data['all_transfer'] - $data['transfers'] );
 
             $this->load->view( 'user/user_info', $data );
             $this->load->view( 'user/user_footer' );
@@ -412,15 +415,15 @@ class User extends CI_Controller
              //注销充值邀请码
             $this->user_model->deactive_code($charge_code, $data['user_name']);             
             //获取充值码对应的流量
-            $this->user_model->get_code_transfer($charge_code);
+            //var_dump($this->user_model->get_code_transfer($charge_code)); die();
             //获取有效期
-            $this->user_model->code_period($charge_code);            
+            //$this->user_model->code_period($charge_code);            
            
             $update_data = array(
             'switch' => '1',
             'enable' => '1',                
-            'transfer_enable' => (int)$this->user_model->get_code_transfer($charge_code) + (int)$data['all_transfer'], //刷新增加流量
-            'expire_date' => (int)($this->user_model->code_period($charge_code)) +  (int)($data['expire_date']) //刷新增加expire_date              
+            'transfer_enable' => $this->user_model->get_code_transfer($charge_code) + $data['all_transfer'], //刷新增加流量
+            'expire_date' => $this->user_model->code_period($charge_code) +  $data['expire_date'] //刷新增加expire_date              
             );
             
             $this->db->where('user_name', $data['user_name']);
