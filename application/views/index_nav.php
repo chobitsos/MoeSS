@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <a href="<?php echo site_url()?>" class="cc">首页</a>
     <a href="<?php echo site_url('siteIndex/view_code');?>">邀请码</a>
     <a href="<?php echo site_url('user'); ?>">用户中心</a>
-    <a href="javascript:;">VPN套餐价</a>
+<!--    <a href="javascript:;">VPN套餐价</a>-->
     <a href="<?php echo site_url('user/login'); ?>" class="tou">登录</a>
     <a href="<?php echo site_url('user/register') ;?>" class="btn">注册</a>
    </span>
