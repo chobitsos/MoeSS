@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <h4>公告</h4>
                             <p>服务器新鲜到位，不定期福利提供！<br>加Q群送流量！如需充值或延期及其他诉求请加QQ群（469702630)）联系群主, 见FAQ！</p><br>
                             <h4>Shadowsocks配置指导手册</h4>
-                            <p><a class="btn btn-success" id="check_in_button" href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/Shadowsocks配置上网.docx">立即下载</a></p><br>
+                            <p><a class="btn btn-success" id="check_in_button" href="http://ssserver.blob.core.chinacloudapi.cn/shadowsocks/Shadowsocks配置上网.docx">立即下载</a></p><br>
                             <h4>活动热推</h4>
                             <p><img src="<?php echo base_url('images/hot.png'); ?>" width="50" height="50" border="0"/>
                              5月底前充一月送一月，充两月以上送两月，(每月10元)，按每月10G流量放送！<br>

@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <p><img src="<?php echo base_url('images/titline.png'); ?>" width="390" height="10" border="0"/></p>
     <ul class="conlist">
     	<li class="conlist1 l mar_r1">
-        	<a href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/shadowsocks-nightly-2.9.5.apk">
+        	<a href="http://ssserver.blob.core.chinacloudapi.cn/shadowsocks/shadowsocks-nightly-2.9.5.apk">
             	<p></p>
                 <span>Android</span>
                 <i>Android客户端安装</i>
@@ -60,14 +60,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </a>
         </li>
         <li class="conlist3 l mar_r1">
-        	<a href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/Shadowsocks-2.5.8.zip">
+        	<a href="http://ssserver.blob.core.chinacloudapi.cn/shadowsocks/Shadowsocks-2.5.8.zip">
             	<p></p>
                 <span>Windows</span>
                 <i>Windows用户推荐此客户端</i>
             </a>
         </li>
         <li class="conlist4 r">
-        	<a href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/ShadowsocksX-2.6.3.dmg">
+        	<a href="http://ssserver.blob.core.chinacloudapi.cn/shadowsocks/ShadowsocksX-2.6.3.dmg">
             	<p></p>
                 <span>GoAgentX</span>
                 <i>Mac用户推荐此客户端</i>
