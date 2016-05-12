@@ -8,6 +8,11 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<div class="footWrap clear">
-	<p class="clear">&copy;Free land of aw c2016 Power by Freeland of Aaron  </p>
+
+<link type="text/css" href="<?php echo base_url("static/css/common.css"); ?>" rel="stylesheet" />
+
+<div class="footer">
+<div class="con">
+	<span>©Free land of aw c2016 Power by Freeland of Aaron</span>
+</div>
 </div>
