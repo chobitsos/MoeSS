@@ -13,11 +13,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0" />
     <title><?php echo SITE_NAME; ?> - 邀请码</title>
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url("static/css/common.css"); ?>" />
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url("static/css/bootstrap.min.css"); ?>" rel="stylesheet">
-    <!-- Custom styles for this template -->
-<!--    <link href="<?php echo base_url("static/css/jumbotron-narrow.css"); ?>" rel="stylesheet">-->
 
+    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -27,7 +27,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body >
  <?php $this->load->view('index_nav');?>
-<br>
 <div style="background:#fff;">
 <div class="content" >
     <center><h2 class="sub-header" >若无可用邀请码发布，请联系群主获取，QQ群:469702630</h2></center>
