@@ -36,12 +36,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
  <?php $this->load->view('index_nav');?>
-<div class="bannerWrap clear">
+<!--<div class="bannerWrap clear">
 	<div class="banner clear"></div>
-</div>
+</div>-->
+<br><div>
+    <center><h2 class="sub-header" >若无可用邀请码发布，请联系群主获取，QQ群:469702630</h2></center>
+</div><br>
+
 <div class="container">   
     <div class="jumbotron">
-        <p class="lead"> 邀请码实时刷新</p>
+        <p class="lead">邀请码实时刷新</p>
     </div>
 
     <div class="row marketing">
