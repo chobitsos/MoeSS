@@ -4,7 +4,7 @@ html{font-size:62.5%;}
 a,a:link,a:active,a:visited,a:hover{display:inline-block;text-decoration:none;color:#232a31;}
 body{color:#232a31;background:#232a31;font-size:1.4em;}
 .clear{display:block;clear:both;}
-div.header{width:100%;padding:10px 0px;}
+div.header{width:100%;padding:10px 0px; height:100%}
 div.header>.con{position:relative;width:90%;margin:0 auto;}
 div.header>.con>span.log{float:left;display:inline-block;width:260px;height:60px;background-image:url(../../images/logo.png);background-repeat:no-repeat;background-position:center center;}
 div.header>.con>span.nav{float:right;padding:10px 0px;}
@@ -15,7 +15,7 @@ div.header>.con>span.nav>a.btn:hover{background:#d44c32;}
 a.focus{display:block;width:100%;background:url(../../images/focus_image.png) no-repeat center center;background-size:auto 100%;}
 a.focus>img{display:inline-block;width:100%;}
 div.content{width:100%;padding:50px 0px;background:#fff;}
-div.content>.con{width:90%;margin:0 auto;text-align:center;}
+div.content>.con{width:100%;margin:0 auto;text-align:center;}
 div.content>.con>p.msgt1{width:100%;margin:0 auto;text-align:center;font-size:36px;}
 div.content>.con>p.msgt2{width:100%;margin:0 auto;text-align:center;padding:10px 0px;font-size:30px;}
 div.content>.con>p.msgt3{width:240px;height:3px;margin:0 auto;border-top:solid 1px #a7aaad;}

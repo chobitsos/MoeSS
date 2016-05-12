@@ -8,22 +8,13 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="<?php echo site_url('favicon.ico'); ?>">
-	<link type="text/css" href="<?php echo base_url("static/css/index.css"); ?>" rel="stylesheet" />
-	
-
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0" />
     <title><?php echo SITE_NAME; ?> - 邀请码</title>
-
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url("static/css/bootstrap.min.css"); ?>" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url("static/css/jumbotron-narrow.css"); ?>" rel="stylesheet">
 
@@ -33,17 +24,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
-<body>
+<body style="background:#fff;" height="100%" >
  <?php $this->load->view('index_nav');?>
 <!--<div class="bannerWrap clear">
 	<div class="banner clear"></div>
 </div>-->
-<br><div>
+<br>
+<div class="content">
     <center><h2 class="sub-header" >若无可用邀请码发布，请联系群主获取，QQ群:469702630</h2></center>
 </div><br>
-
-<div class="container">   
+<div class="container">
     <div class="jumbotron">
         <p class="lead">邀请码实时刷新</p>
     </div>
@@ -59,7 +49,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <th>状态</th>
                 </tr>
                 </thead>
-
                 <tbody>
                 <?php if ($codes) { $a=1; foreach ($codes as $code) : ?>
                     <tr>
