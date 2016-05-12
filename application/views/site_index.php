@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <?php $this->load->view('index_nav');?>
 <!--Banner-->
-<a class="focus" href="javascript:;"><img src="<?php echo base_url('images/pic1.jpg'); ?>" /></a>
+<a class="focus" href="javascript:;"><img src="<?php echo base_url('images/focus_image.png'); ?>" /></a>
 <!--Banner end-->
 <div class="content">
 <div class="con">
