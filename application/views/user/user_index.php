@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p><a class="btn btn-success" id="check_in_button" href="http://hfjr.blob.core.chinacloudapi.cn/shadowsocks/Shadowsocks配置上网.docx">立即下载</a></p><br>
                             <h4>活动热推</h4>
                             <p><img src="<?php echo base_url('images/hot.png'); ?>" width="50" height="50" border="0"/>
-                             5月底前充值一个月，送一个月(共20G流量)，充两个月以上，送两个月（共40G流量）
+                             5月底前充值一个月，送一个月，充两个月以上，送两个月，每月10G流量
                             <font color="#FF0000">支付宝转账：d5aaron@gmail.com, 注明账号 </font></p><br>
                             <p><img src="<?php echo base_url('images/prize.png'); ?>" width="50" height="50" border="0"/>
                              KDS TF专供：射分送流量，10分送1G，以此类推</p>
